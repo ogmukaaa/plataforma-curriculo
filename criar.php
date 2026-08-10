@@ -1,5 +1,6 @@
 <?php
-require_once 'crud.php'
+require_once 'crud.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_curriculo = create($pdo, 'dados_pessoais', [
         'nome' => $_POST['nome'],
@@ -47,9 +48,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Criar Currículo</title>
 </head>
 <body>
-    
+    <h1>Criar Currículo</h1>
+    <!-- Dados Pessoais -->
+    <input type="text" name="nome" placeholder="Nome Completo">
+    <input type="date" name="data_nasc" placeholder="Data Nascimento">
+    <input type="text" name="cidade" placeholder="cidade">
+    <input type="text" name="estado" placeholder="estado">
+    <input type="text" name="nacionalidade" placeholder="nacionalidade">
+    <input type="text" name="resumo" placeholder="Fale sobre suas qualidade e competências 
+    e Objetivo profissional">
+
+
 </body>
 </html>
