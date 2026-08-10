@@ -11,17 +11,17 @@ CREATE TABLE contatos (
     email VARCHAR(100),
     telefone VARCHAR(20),
     perfil_profissional VARCHAR(150), -- ex: LinkedIn, GitHub
-    FOREIGN KEY (id_curriculo) REFERENCES dados_pessoais(id) ON DELETE CASCADE
+    FOREIGN KEY (id_curriculo) REFERENCES dados_pessoais(id) 
 );
 
 CREATE TABLE experiencias (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_curriculo INT NOT NULL,
-    empresa VARCHAR(100),
+    empresa VARCHAR(100),   
     funcao VARCHAR(100),
     periodo VARCHAR(50),
     descricao TEXT,
-    FOREIGN KEY (id_curriculo) REFERENCES dados_pessoais(id) ON DELETE CASCADE
+    FOREIGN KEY (id_curriculo) REFERENCES dados_pessoais(id) 
 );
 
 CREATE TABLE formacao (
@@ -30,5 +30,5 @@ CREATE TABLE formacao (
     instituicao VARCHAR(100),
     curso VARCHAR(100),
     periodo VARCHAR(50),
-    FOREIGN KEY (id_curriculo) REFERENCES dados_pessoais(id) ON DELETE CASCADE
+    FOREIGN KEY (id_curriculo) REFERENCES dados_pessoais(id) 
 );
