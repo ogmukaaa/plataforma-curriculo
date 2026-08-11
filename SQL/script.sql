@@ -25,7 +25,6 @@ CREATE TABLE experiencias (
     id_curriculo INT NOT NULL,
     empresa VARCHAR(100),   
     funcao VARCHAR(100),
-    periodo VARCHAR(50),
     data_inicio VARCHAR(20),
     data_fim VARCHAR(20),
     emprego_atual BOOLEAN DEFAULT FALSE,
