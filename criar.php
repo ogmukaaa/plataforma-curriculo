@@ -55,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>Criar Currículo</h1>
     <!-- Dados Pessoais -->
      <h2>Dados Pessoais</h2>
+     <form action="" method="post"></form>
         <input type="text" name="nome" placeholder="Nome Completo"><br>
         <input type="date" name="data_nasc" placeholder="Data Nascimento"><br>
         <input type="text" name="cidade" placeholder="cidade"><br>
@@ -64,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         e Objetivo profissional"><br>
 
     <h2>Contatos</h2>
+    <form action="" method="post"></form>
         <input type="text" name="email" placeholder="Email"><br>
         <input type="number" name="telefone" placeholder="Telefone"><br>
         <input type="text" name="linkedin" placeholder="linkedin"><br>
@@ -71,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="link_url" placeholder="https://site-pessoal.com"><br>
 
     <h2>Experiencia</h2>
+    <form action="" method="post"></form>
         <input type="text" name="empresa" placeholder="Empresa"><br>
         <input type="text" name="funcao" placeholder="funcao"><br>
         <input type="date" name="data_inicio"><br>
@@ -78,10 +81,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="date" name="emprego_atual"><br>
 
     <h2>Formação</h2>
+    <form action="" method="post"></form>
         <input type="text" name="instituicao" placeholder="instituicao"><br>
         <input type="text" name="periodo" placeholder="periodo"><br>
         <input type="text" name="nivel" placeholder="Nivel (Técnico, Técnólogo, Bacharelado..."><br>
         <input type="text" name="status" placeholder="Status"><br>
+
+
+    <button type="submit" class="btnCriar">Criar Currículo</button>
 
 
 </body>
