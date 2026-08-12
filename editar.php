@@ -2,7 +2,7 @@
 require_once 'crud.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['id'];
+    $id = (int) $_POST['id'];
 
     update($pdo, 'dados_pessoais', [
         'nome'            => $_POST['nome'],
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'estado'          => $_POST['estado'],
         'nacionalidade'   => $_POST['nacionalidade'],
         'resumo'          => $_POST['resumo'],
-    ], 'id = :id', [':id' => $id]);
+    ], "id = $id");
 
     update($pdo, 'contatos', [
         'email'    => $_POST['email'],
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'linkedin' => $_POST['linkedin'],
         'github'   => $_POST['github'],
         'link_url' => $_POST['link_url'],
-    ], 'id_curriculo = :id', [':id' => $id]);
+    ], "id_curriculo = $id");
 
     update($pdo, 'experiencias', [
         'empresa'       => $_POST['empresa'],
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'data_fim'      => $_POST['data_fim'],
         'emprego_atual' => isset($_POST['emprego_atual']) ? 1 : 0,
         'descricao'     => $_POST['descricao'],
-    ], 'id_curriculo = :id', [':id' => $id]);
+    ], "id_curriculo = $id");
 
     update($pdo, 'formacao', [
         'instituicao' => $_POST['instituicao'],
@@ -37,22 +37,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'periodo'     => $_POST['periodo'],
         'nivel'       => $_POST['nivel'],
         'status'      => $_POST['status'],
-    ], 'id_curriculo = :id', [':id' => $id]);
+    ], "id_curriculo = $id");
 
     header('Location: index.php');
     exit;
 }
 
-$id = $_GET['id'] ?? null;
+$id = isset($_GET['id']) ? (int) $_GET['id'] : null;
 if (!$id) {
     header('Location: index.php');
     exit;
 }
 
-$dados = readOne($pdo, 'dados_pessoais', 'id = :id', [':id' => $id]);
-$contato = readOne($pdo, 'contatos', 'id_curriculo = :id', [':id' => $id]);
-$experiencia = readOne($pdo, 'experiencias', 'id_curriculo = :id', [':id' => $id]);
-$formacao = readOne($pdo, 'formacao', 'id_curriculo = :id', [':id' => $id]);
+$dados       = read($pdo, 'dados_pessoais', "id = $id");
+$contato     = read($pdo, 'contatos', "id_curriculo = $id");
+$experiencia = read($pdo, 'experiencias', "id_curriculo = $id");
+$formacao    = read($pdo, 'formacao', "id_curriculo = $id");
 
 if (!$dados) {
     header('Location: index.php');
