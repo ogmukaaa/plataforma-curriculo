@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     create($pdo, 'contatos', [
+        'id_curriculo' => $id_curriculo,
         'email' => $_POST['email'],
         'telefone' => $_POST['telefone'],
         'linkedin' => $_POST['linkedin'],
@@ -23,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
     create($pdo, 'experiencias', [
+        'id_curriculo' => $id_curriculo,
         'empresa' => $_POST['empresa'],
         'funcao' => $_POST['funcao'],
         'data_inicio' => $_POST['data_inicio'],
@@ -32,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
     create($pdo, 'formacao', [
+        'id_curriculo' => $id_curriculo,
         'instituicao' => $_POST['instituicao'],
         'curso' => $_POST['curso'],
         'periodo' => $_POST['periodo'],
@@ -55,14 +58,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>Criar Currículo</h1>
     <!-- Dados Pessoais -->
      <h2>Dados Pessoais</h2>
-     <form action="" method="post"></form>
+     <form action="" method="post">
         <input type="text" name="nome" placeholder="Nome Completo"><br>
         <input type="date" name="data_nasc" placeholder="Data Nascimento"><br>
         <input type="text" name="cidade" placeholder="cidade"><br>
         <input type="text" name="estado" placeholder="estado"><br>
         <input type="text" name="nacionalidade" placeholder="nacionalidade"><br>
-        <input type="text" name="resumo" placeholder="Fale sobre suas qualidade e competências 
-        e Objetivo profissional"><br>
+        <textarea type="text" name="resumo" placeholder="Fale sobre suas qualidade e competências 
+        e Objetivo profissional"></textarea><br>
 
     <h2>Contatos</h2>
     <form action="" method="post"></form>
@@ -89,7 +92,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <button type="submit" class="btnCriar">Criar Currículo</button>
-
+    
+</form>
 
 </body>
 </html>
