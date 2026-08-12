@@ -21,30 +21,27 @@ $curriculos = readAll($pdo, 'dados_pessoais');
     <main>
         <?php if (empty($curriculos)): ?>
 
-        <p class="vazio">Nenhum currículo adicionado ainda.</p>
+            <p class="vazio">Nenhum currículo adicionado ainda.</p>
 
         <?php else: ?>
 
-        <div class="lista-curriculos">
-            <?php foreach ($curriculos as $curriculo): ?>
-                <h1>Currículos</h1>
-            <div class="card">
-                <h2><?php htmlspecialchars($curriculo['nome']) ?></h2>
+            <h2>Currículos Cadastrados</h2>
+            <div class="lista-curriculos">
+                <?php foreach ($curriculos as $curriculo): ?>
+                    <div class="card">
+                        <h2><?= htmlspecialchars($curriculo['nome'] ?? '') ?></h2>
+                        <p class="cargo"><?= htmlspecialchars($curriculo['cargo'] ?? '') ?></p>
+                        <p class="resumo"><?= htmlspecialchars($curriculo['resumo'] ?? '') ?></p>
 
-                <p class="cargo"><?php htmlspecialchars($curriculo['cargo']) ?></p>
-                <p class="resumo"><?php htmlspecialchars($curriculo['resumo']) ?></p>
-            
-
-            <div class="acoes">
-                <a href="visualizar.php?id=<?= $curriculo['id'] ?>" class="btn-ver">Ver</a>
-                <a href="editar.php?id=<?= $curriculo['id'] ?>" class="btn-editar">Editar</a>
-                <a href="delete.php?id=<?= $curriculo['id'] ?>" class="btn-excluir">Excluir</a>
-            
+                        <div class="acoes">
+                            <a href="visualizar.php?id=<?= $curriculo['id'] ?>" class="btn-ver">Ver</a>
+                            <a href="editar.php?id=<?= $curriculo['id'] ?>" class="btn-editar">Editar</a>
+                            <a href="delete.php?id=<?= $curriculo['id'] ?>" class="btn-excluir">Excluir</a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
-            </div>
-            <?php endforeach; ?>
-        </div>
         <?php endif; ?>
     </main>
 </body>
