@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'funcao'        => $_POST['funcao'],
         'data_inicio'   => $_POST['data_inicio'],
         'data_fim'      => $_POST['data_fim'],
-        'emprego_atual' => isset($_POST['emprego_atual']) ? 1 : 0,
+        'emprego_atual' => $_POST['emprego_atual'],
         'descricao'     => $_POST['descricao'],
     ], "id_curriculo = $id");
 
@@ -92,6 +92,7 @@ if (!$dados) {
         <input type="text" name="funcao" value="<?= htmlspecialchars($experiencia['funcao'] ?? '') ?>"><br>
         <input type="date" name="data_inicio" value="<?= htmlspecialchars($experiencia['data_inicio'] ?? '') ?>"><br>
         <input type="date" name="data_fim" value="<?= htmlspecialchars($experiencia['data_fim'] ?? '') ?>"><br>
+        <input type="text" name="emprego_atual" value="<?= htmlspecialchars($experiencia['emprego_atual'] ?? '') ?>" placeholder="Ex: Sim, atualmente / Não"><br>
         <textarea name="descricao"><?= htmlspecialchars($experiencia['descricao'] ?? '') ?></textarea><br>
 
         <h2>Formação</h2>

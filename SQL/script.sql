@@ -27,7 +27,7 @@ CREATE TABLE experiencias (
     funcao VARCHAR(100),
     data_inicio VARCHAR(20),
     data_fim VARCHAR(20),
-    emprego_atual BOOLEAN DEFAULT FALSE,
+    emprego_atual VARCHAR(50) DEFAULT NULL,
     descricao TEXT,
     FOREIGN KEY (id_curriculo) REFERENCES dados_pessoais(id)
 );

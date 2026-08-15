@@ -49,7 +49,8 @@ if (!$dados) {
     <p><strong>Empresa:</strong> <?= htmlspecialchars($experiencia['empresa'] ?? '') ?></p>
     <p><strong>Função:</strong> <?= htmlspecialchars($experiencia['funcao'] ?? '') ?></p>
     <p><strong>Início:</strong> <?= htmlspecialchars($experiencia['data_inicio'] ?? '') ?></p>
-    <p><strong>Fim:</strong> <?= !empty($experiencia['emprego_atual']) ? 'Atual' : htmlspecialchars($experiencia['data_fim'] ?? '') ?></p>
+    <p><strong>Fim:</strong> <?= htmlspecialchars($experiencia['data_fim'] ?? '') ?></p>
+    <p><strong>Emprego atual:</strong> <?= htmlspecialchars($experiencia['emprego_atual'] ?? '') ?></p>
     <p><strong>Descrição:</strong> <?= nl2br(htmlspecialchars($experiencia['descricao'] ?? '')) ?></p>
 
     <h2>Formação</h2>
