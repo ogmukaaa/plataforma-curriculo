@@ -27,7 +27,7 @@ if (!$dados) {
 </head>
 <body>
     <a href="index.php">&larr; Voltar</a>
-
+    <div class="visualizar">
     <h1><?= htmlspecialchars($dados['nome'] ?? '') ?></h1>
     <p class="cargo"><?= htmlspecialchars($dados['cargo'] ?? '') ?></p>
 
@@ -61,5 +61,6 @@ if (!$dados) {
     <p><strong>Status:</strong> <?= htmlspecialchars($formacao['status'] ?? '') ?></p>
 
     <a href="editar.php?id=<?= $dados['id'] ?>" class="btn-editar">Editar</a>
+</div>
 </body>
 </html>

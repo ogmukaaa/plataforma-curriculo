@@ -68,41 +68,51 @@ if (!$dados) {
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form action="editar.php" method="post">
-        <input type="hidden" name="id" value="<?= htmlspecialchars($dados['id']) ?>">
+    <div class="form-container">
+        <form action="editar.php" method="post">
+            <input type="hidden" name="id" value="<?= htmlspecialchars($dados['id']) ?>">
 
-        <h2>Dados Pessoais</h2>
-        <input type="text" name="nome" value="<?= htmlspecialchars($dados['nome'] ?? '') ?>" required><br>
-        <input type="text" name="cargo" value="<?= htmlspecialchars($dados['cargo'] ?? '') ?>"><br>
-        <input type="date" name="data_nasc" value="<?= htmlspecialchars($dados['data_nascimento'] ?? '') ?>"><br>
-        <input type="text" name="cidade" value="<?= htmlspecialchars($dados['cidade'] ?? '') ?>"><br>
-        <input type="text" name="estado" value="<?= htmlspecialchars($dados['estado'] ?? '') ?>"><br>
-        <input type="text" name="nacionalidade" value="<?= htmlspecialchars($dados['nacionalidade'] ?? '') ?>"><br>
-        <textarea name="resumo"><?= htmlspecialchars($dados['resumo'] ?? '') ?></textarea><br>
+            <div class="form-section">
+                <h2>Dados Pessoais</h2>
+                <input type="text" name="nome" value="<?= htmlspecialchars($dados['nome'] ?? '') ?>" required><br>
+                <input type="text" name="cargo" value="<?= htmlspecialchars($dados['cargo'] ?? '') ?>"><br>
+                <input type="date" name="data_nasc" value="<?= htmlspecialchars($dados['data_nascimento'] ?? '') ?>"><br>
+                <input type="text" name="cidade" value="<?= htmlspecialchars($dados['cidade'] ?? '') ?>"><br>
+                <input type="text" name="estado" value="<?= htmlspecialchars($dados['estado'] ?? '') ?>"><br>
+                <input type="text" name="nacionalidade" value="<?= htmlspecialchars($dados['nacionalidade'] ?? '') ?>"><br>
+                <textarea name="resumo"><?= htmlspecialchars($dados['resumo'] ?? '') ?></textarea><br>
+            </div>
 
-        <h2>Contatos</h2>
-        <input type="email" name="email" value="<?= htmlspecialchars($contato['email'] ?? '') ?>"><br>
-        <input type="text" name="telefone" value="<?= htmlspecialchars($contato['telefone'] ?? '') ?>"><br>
-        <input type="text" name="linkedin" value="<?= htmlspecialchars($contato['linkedin'] ?? '') ?>"><br>
-        <input type="text" name="github" value="<?= htmlspecialchars($contato['github'] ?? '') ?>"><br>
-        <input type="text" name="link_url" value="<?= htmlspecialchars($contato['link_url'] ?? '') ?>"><br>
+            <div class="form-section">
+                <h2>Contatos</h2>
+                <input type="email" name="email" value="<?= htmlspecialchars($contato['email'] ?? '') ?>"><br>
+                <input type="text" name="telefone" value="<?= htmlspecialchars($contato['telefone'] ?? '') ?>"><br>
+                <input type="text" name="linkedin" value="<?= htmlspecialchars($contato['linkedin'] ?? '') ?>"><br>
+                <input type="text" name="github" value="<?= htmlspecialchars($contato['github'] ?? '') ?>"><br>
+                <input type="text" name="link_url" value="<?= htmlspecialchars($contato['link_url'] ?? '') ?>"><br>
+            </div>
 
-        <h2>Experiência</h2>
-        <input type="text" name="empresa" value="<?= htmlspecialchars($experiencia['empresa'] ?? '') ?>"><br>
-        <input type="text" name="funcao" value="<?= htmlspecialchars($experiencia['funcao'] ?? '') ?>"><br>
-        <input type="date" name="data_inicio" value="<?= htmlspecialchars($experiencia['data_inicio'] ?? '') ?>"><br>
-        <input type="date" name="data_fim" value="<?= htmlspecialchars($experiencia['data_fim'] ?? '') ?>"><br>
-        <input type="text" name="emprego_atual" value="<?= htmlspecialchars($experiencia['emprego_atual'] ?? '') ?>" placeholder="Ex: Sim, atualmente / Não"><br>
-        <textarea name="descricao"><?= htmlspecialchars($experiencia['descricao'] ?? '') ?></textarea><br>
+            <div class="form-section">
+                <h2>Experiência</h2>
+                <input type="text" name="empresa" value="<?= htmlspecialchars($experiencia['empresa'] ?? '') ?>"><br>
+                <input type="text" name="funcao" value="<?= htmlspecialchars($experiencia['funcao'] ?? '') ?>"><br>
+                <input type="date" name="data_inicio" value="<?= htmlspecialchars($experiencia['data_inicio'] ?? '') ?>"><br>
+                <input type="date" name="data_fim" value="<?= htmlspecialchars($experiencia['data_fim'] ?? '') ?>"><br>
+                <input type="text" name="emprego_atual" value="<?= htmlspecialchars($experiencia['emprego_atual'] ?? '') ?>" placeholder="Ex: Sim, atualmente / Não"><br>
+                <textarea name="descricao"><?= htmlspecialchars($experiencia['descricao'] ?? '') ?></textarea><br>
+            </div>
 
-        <h2>Formação</h2>
-        <input type="text" name="instituicao" value="<?= htmlspecialchars($formacao['instituicao'] ?? '') ?>"><br>
-        <input type="text" name="curso" value="<?= htmlspecialchars($formacao['curso'] ?? '') ?>"><br>
-        <input type="text" name="periodo" value="<?= htmlspecialchars($formacao['periodo'] ?? '') ?>"><br>
-        <input type="text" name="nivel" value="<?= htmlspecialchars($formacao['nivel'] ?? '') ?>"><br>
-        <input type="text" name="status" value="<?= htmlspecialchars($formacao['status'] ?? '') ?>"><br>
+            <div class="form-section">
+                <h2>Formação</h2>
+                <input type="text" name="instituicao" value="<?= htmlspecialchars($formacao['instituicao'] ?? '') ?>"><br>
+                <input type="text" name="curso" value="<?= htmlspecialchars($formacao['curso'] ?? '') ?>"><br>
+                <input type="text" name="periodo" value="<?= htmlspecialchars($formacao['periodo'] ?? '') ?>"><br>
+                <input type="text" name="nivel" value="<?= htmlspecialchars($formacao['nivel'] ?? '') ?>"><br>
+                <input type="text" name="status" value="<?= htmlspecialchars($formacao['status'] ?? '') ?>"><br>
+            </div>
 
-        <button type="submit" class="btnAtualizar">Salvar Alterações</button>
-    </form>
+            <button type="submit" class="btnAtualizar">Salvar Alterações</button>
+        </form>
+    </div>
 </body>
 </html>

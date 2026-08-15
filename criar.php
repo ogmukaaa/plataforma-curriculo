@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'resumo' => $_POST['resumo'],
     ]);
 
-
     create($pdo, 'contatos', [
         'id_curriculo' => $id_curriculo,
         'email' => $_POST['email'],
@@ -20,17 +19,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'linkedin' => $_POST['linkedin'],
         'github' => $_POST['github'],
         'link_url' => $_POST['link_url'],
-    
     ]);
 
     create($pdo, 'experiencias', [
-    'id_curriculo' => $id_curriculo,
-    'empresa' => $_POST['empresa'],
-    'funcao' => $_POST['funcao'],
-    'data_inicio' => $_POST['data_inicio'],
-    'data_fim' => $_POST['data_fim'],
-    'emprego_atual' => $_POST['emprego_atual'],
-    'descricao' => $_POST['descricao'],
+        'id_curriculo' => $id_curriculo,
+        'empresa' => $_POST['empresa'],
+        'funcao' => $_POST['funcao'],
+        'data_inicio' => $_POST['data_inicio'],
+        'data_fim' => $_POST['data_fim'],
+        'emprego_atual' => $_POST['emprego_atual'],
+        'descricao' => $_POST['descricao'],
     ]);
 
     create($pdo, 'formacao', [
@@ -51,47 +49,55 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Criar Currículo</title>
 </head>
 <body>
-    <h1>Criar Currículo</h1>
-    <!-- Dados Pessoais -->
-     <h2>Dados Pessoais</h2>
-     <form action="" method="post">
-        <input type="text" name="nome" placeholder="Nome Completo"><br>
-        <input type="date" name="data_nasc" placeholder="Data Nascimento"><br>
-        <input type="text" name="cidade" placeholder="cidade"><br>
-        <input type="text" name="estado" placeholder="estado"><br>
-        <input type="text" name="nacionalidade" placeholder="nacionalidade"><br>
-        <textarea type="text" name="resumo" placeholder="Fale sobre suas qualidade e competências 
-        e Objetivo profissional"></textarea><br>
+    <div class="form-container">
+        <form action="" method="post">
 
-    <h2>Contatos</h2>
-        <input type="text" name="email" placeholder="Email"><br>
-        <input type="number" name="telefone" placeholder="Telefone"><br>
-        <input type="text" name="linkedin" placeholder="linkedin"><br>
-        <input type="text" name="github" placeholder="github"><br>
-        <input type="text" name="link_url" placeholder="https://site-pessoal.com"><br>
+            <div class="form-section">
+                <h2>Dados Pessoais</h2>
+                <input type="text" name="nome" placeholder="Nome Completo"><br>
+                <input type="text" name="cargo" placeholder="Cargo"><br>
+                <input type="date" name="data_nasc" placeholder="Data Nascimento"><br>
+                <input type="text" name="cidade" placeholder="cidade"><br>
+                <input type="text" name="estado" placeholder="estado"><br>
+                <input type="text" name="nacionalidade" placeholder="nacionalidade"><br>
+                <textarea name="resumo" placeholder="Fale sobre suas qualidades e competências e Objetivo profissional"></textarea><br>
+            </div>
 
-    <h2>Experiencia</h2>
-        <input type="text" name="empresa" placeholder="Empresa"><br>
-        <input type="text" name="funcao" placeholder="funcao"><br>
-        <input type="date" name="data_inicio"><br>
-        <input type="date" name="data_fim"><br>
-        <input type="text" name="emprego_atual" placeholder="Empresa Atual"><br>
-        <textarea name="descricao" placeholder="Descreva sua função e suas atividades"></textarea><br>
+            <div class="form-section">
+                <h2>Contatos</h2>
+                <input type="text" name="email" placeholder="Email"><br>
+                <input type="number" name="telefone" placeholder="Telefone"><br>
+                <input type="text" name="linkedin" placeholder="linkedin"><br>
+                <input type="text" name="github" placeholder="github"><br>
+                <input type="text" name="link_url" placeholder="https://site-pessoal.com"><br>
+            </div>
 
-    <h2>Formação</h2>
-        <input type="text" name="instituicao" placeholder="instituicao"><br>
-        <input type="text" name="periodo" placeholder="periodo"><br>
-        <input type="text" name="nivel" placeholder="Nivel (Técnico, Técnólogo, Bacharelado..."><br>
-        <input type="text" name="status" placeholder="Status"><br>
+            <div class="form-section">
+                <h2>Experiencia</h2>
+                <input type="text" name="empresa" placeholder="Empresa"><br>
+                <input type="text" name="funcao" placeholder="funcao"><br>
+                <input type="date" name="data_inicio"><br>
+                <input type="date" name="data_fim"><br>
+                <input type="text" name="emprego_atual" placeholder="Ex: Sim, atualmente / Não"><br>
+                <textarea name="descricao" placeholder="Descreva suas atividades"></textarea><br>
+            </div>
 
+            <div class="form-section">
+                <h2>Formação</h2>
+                <input type="text" name="instituicao" placeholder="instituicao"><br>
+                <input type="text" name="curso" placeholder="curso"><br>
+                <input type="text" name="periodo" placeholder="periodo"><br>
+                <input type="text" name="nivel" placeholder="Nivel (Técnico, Tecnólogo, Bacharelado...)"><br>
+                <input type="text" name="status" placeholder="Status"><br>
+            </div>
 
-    <button type="submit" class="btnCriar">Criar Currículo</button>
+            <button type="submit" class="btnCriar">Criar Currículo</button>
 
-</form>
-
+        </form>
+    </div>
 </body>
 </html>
