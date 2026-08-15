@@ -24,13 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
     create($pdo, 'experiencias', [
-        'id_curriculo' => $id_curriculo,
-        'empresa' => $_POST['empresa'],
-        'funcao' => $_POST['funcao'],
-        'data_inicio' => $_POST['data_inicio'],
-        'data_fim' => $_POST['data_fim'],
-        'emprego_atual' => $_POST['emprego_atual'],
-        'descricao' => $_POST['descricao'],
+    'id_curriculo' => $id_curriculo,
+    'empresa' => $_POST['empresa'],
+    'funcao' => $_POST['funcao'],
+    'data_inicio' => $_POST['data_inicio'],
+    'data_fim' => $_POST['data_fim'],
+    'emprego_atual' => isset($_POST['emprego_atual']) ? 1 : 0,
+    'descricao' => $_POST['descricao'],
     ]);
 
     create($pdo, 'formacao', [
@@ -79,7 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="funcao" placeholder="funcao"><br>
         <input type="date" name="data_inicio"><br>
         <input type="date" name="data_fim"><br>
-        <input type="date" name="emprego_atual"><br>
+        <label><input type="checkbox" name="emprego_atual" value="1"> Emprego atual</label><br>
+        <textarea name="descricao" placeholder="Descreva suas atividades"></textarea><br>
 
     <h2>Formação</h2>
         <input type="text" name="instituicao" placeholder="instituicao"><br>
