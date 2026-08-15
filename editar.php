@@ -74,41 +74,133 @@ if (!$dados) {
 
             <div class="form-section">
                 <h2>Dados Pessoais</h2>
-                <input type="text" name="nome" value="<?= htmlspecialchars($dados['nome'] ?? '') ?>" required><br>
-                <input type="text" name="cargo" value="<?= htmlspecialchars($dados['cargo'] ?? '') ?>"><br>
-                <input type="date" name="data_nasc" value="<?= htmlspecialchars($dados['data_nascimento'] ?? '') ?>"><br>
-                <input type="text" name="cidade" value="<?= htmlspecialchars($dados['cidade'] ?? '') ?>"><br>
-                <input type="text" name="estado" value="<?= htmlspecialchars($dados['estado'] ?? '') ?>"><br>
-                <input type="text" name="nacionalidade" value="<?= htmlspecialchars($dados['nacionalidade'] ?? '') ?>"><br>
-                <textarea name="resumo"><?= htmlspecialchars($dados['resumo'] ?? '') ?></textarea><br>
+
+                <div class="campo">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($dados['nome'] ?? '') ?>" required>
+                </div>
+
+                <div class="campo">
+                    <label for="cargo">Cargo</label>
+                    <input type="text" id="cargo" name="cargo" value="<?= htmlspecialchars($dados['cargo'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="data_nasc">Data de Nascimento</label>
+                    <input type="date" id="data_nasc" name="data_nasc" value="<?= htmlspecialchars($dados['data_nascimento'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" value="<?= htmlspecialchars($dados['cidade'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" value="<?= htmlspecialchars($dados['estado'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="nacionalidade">Nacionalidade</label>
+                    <input type="text" id="nacionalidade" name="nacionalidade" value="<?= htmlspecialchars($dados['nacionalidade'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="resumo">Resumo</label>
+                    <textarea id="resumo" name="resumo"><?= htmlspecialchars($dados['resumo'] ?? '') ?></textarea>
+                </div>
             </div>
 
             <div class="form-section">
                 <h2>Contatos</h2>
-                <input type="email" name="email" value="<?= htmlspecialchars($contato['email'] ?? '') ?>"><br>
-                <input type="text" name="telefone" value="<?= htmlspecialchars($contato['telefone'] ?? '') ?>"><br>
-                <input type="text" name="linkedin" value="<?= htmlspecialchars($contato['linkedin'] ?? '') ?>"><br>
-                <input type="text" name="github" value="<?= htmlspecialchars($contato['github'] ?? '') ?>"><br>
-                <input type="text" name="link_url" value="<?= htmlspecialchars($contato['link_url'] ?? '') ?>"><br>
+
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="<?= htmlspecialchars($contato['email'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" name="telefone" value="<?= htmlspecialchars($contato['telefone'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="linkedin">LinkedIn</label>
+                    <input type="text" id="linkedin" name="linkedin" value="<?= htmlspecialchars($contato['linkedin'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="github">GitHub</label>
+                    <input type="text" id="github" name="github" value="<?= htmlspecialchars($contato['github'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="link_url">Site / Portfólio</label>
+                    <input type="text" id="link_url" name="link_url" value="<?= htmlspecialchars($contato['link_url'] ?? '') ?>">
+                </div>
             </div>
 
             <div class="form-section">
                 <h2>Experiência</h2>
-                <input type="text" name="empresa" value="<?= htmlspecialchars($experiencia['empresa'] ?? '') ?>"><br>
-                <input type="text" name="funcao" value="<?= htmlspecialchars($experiencia['funcao'] ?? '') ?>"><br>
-                <input type="date" name="data_inicio" value="<?= htmlspecialchars($experiencia['data_inicio'] ?? '') ?>"><br>
-                <input type="date" name="data_fim" value="<?= htmlspecialchars($experiencia['data_fim'] ?? '') ?>"><br>
-                <input type="text" name="emprego_atual" value="<?= htmlspecialchars($experiencia['emprego_atual'] ?? '') ?>" placeholder="Ex: Sim, atualmente / Não"><br>
-                <textarea name="descricao"><?= htmlspecialchars($experiencia['descricao'] ?? '') ?></textarea><br>
+
+                <div class="campo">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="empresa" value="<?= htmlspecialchars($experiencia['empresa'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="funcao">Função</label>
+                    <input type="text" id="funcao" name="funcao" value="<?= htmlspecialchars($experiencia['funcao'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="data_inicio">Data de Início</label>
+                    <input type="date" id="data_inicio" name="data_inicio" value="<?= htmlspecialchars($experiencia['data_inicio'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="data_fim">Data de Fim</label>
+                    <input type="date" id="data_fim" name="data_fim" value="<?= htmlspecialchars($experiencia['data_fim'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="emprego_atual">Emprego Atual</label>
+                    <input type="text" id="emprego_atual" name="emprego_atual" value="<?= htmlspecialchars($experiencia['emprego_atual'] ?? '') ?>" placeholder="Ex: Sim, atualmente / Não">
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição das Atividades</label>
+                    <textarea id="descricao" name="descricao"><?= htmlspecialchars($experiencia['descricao'] ?? '') ?></textarea>
+                </div>
             </div>
 
             <div class="form-section">
                 <h2>Formação</h2>
-                <input type="text" name="instituicao" value="<?= htmlspecialchars($formacao['instituicao'] ?? '') ?>"><br>
-                <input type="text" name="curso" value="<?= htmlspecialchars($formacao['curso'] ?? '') ?>"><br>
-                <input type="text" name="periodo" value="<?= htmlspecialchars($formacao['periodo'] ?? '') ?>"><br>
-                <input type="text" name="nivel" value="<?= htmlspecialchars($formacao['nivel'] ?? '') ?>"><br>
-                <input type="text" name="status" value="<?= htmlspecialchars($formacao['status'] ?? '') ?>"><br>
+
+                <div class="campo">
+                    <label for="instituicao">Instituição</label>
+                    <input type="text" id="instituicao" name="instituicao" value="<?= htmlspecialchars($formacao['instituicao'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="curso">Curso</label>
+                    <input type="text" id="curso" name="curso" value="<?= htmlspecialchars($formacao['curso'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="periodo">Período</label>
+                    <input type="text" id="periodo" name="periodo" value="<?= htmlspecialchars($formacao['periodo'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="nivel">Nível</label>
+                    <input type="text" id="nivel" name="nivel" value="<?= htmlspecialchars($formacao['nivel'] ?? '') ?>">
+                </div>
+
+                <div class="campo">
+                    <label for="status">Status</label>
+                    <input type="text" id="status" name="status" value="<?= htmlspecialchars($formacao['status'] ?? '') ?>">
+                </div>
             </div>
 
             <button type="submit" class="btnAtualizar">Salvar Alterações</button>

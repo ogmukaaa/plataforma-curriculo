@@ -58,41 +58,133 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="form-section">
                 <h2>Dados Pessoais</h2>
-                <input type="text" name="nome" placeholder="Nome Completo"><br>
-                <input type="text" name="cargo" placeholder="Cargo"><br>
-                <input type="date" name="data_nasc" placeholder="Data Nascimento"><br>
-                <input type="text" name="cidade" placeholder="cidade"><br>
-                <input type="text" name="estado" placeholder="estado"><br>
-                <input type="text" name="nacionalidade" placeholder="nacionalidade"><br>
-                <textarea name="resumo" placeholder="Fale sobre suas qualidades e competências e Objetivo profissional"></textarea><br>
+
+                <div class="campo">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome Completo">
+                </div>
+
+                <div class="campo">
+                    <label for="cargo">Cargo</label>
+                    <input type="text" id="cargo" name="cargo" placeholder="Cargo">
+                </div>
+
+                <div class="campo">
+                    <label for="data_nasc">Data de Nascimento</label>
+                    <input type="date" id="data_nasc" name="data_nasc">
+                </div>
+
+                <div class="campo">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="cidade">
+                </div>
+
+                <div class="campo">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" placeholder="estado">
+                </div>
+
+                <div class="campo">
+                    <label for="nacionalidade">Nacionalidade</label>
+                    <input type="text" id="nacionalidade" name="nacionalidade" placeholder="nacionalidade">
+                </div>
+
+                <div class="campo">
+                    <label for="resumo">Resumo</label>
+                    <textarea id="resumo" name="resumo" placeholder="Fale sobre suas qualidades e competências e Objetivo profissional"></textarea>
+                </div>
             </div>
 
             <div class="form-section">
                 <h2>Contatos</h2>
-                <input type="text" name="email" placeholder="Email"><br>
-                <input type="number" name="telefone" placeholder="Telefone"><br>
-                <input type="text" name="linkedin" placeholder="linkedin"><br>
-                <input type="text" name="github" placeholder="github"><br>
-                <input type="text" name="link_url" placeholder="https://site-pessoal.com"><br>
+
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Email">
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="number" id="telefone" name="telefone" placeholder="Telefone">
+                </div>
+
+                <div class="campo">
+                    <label for="linkedin">LinkedIn</label>
+                    <input type="text" id="linkedin" name="linkedin" placeholder="linkedin">
+                </div>
+
+                <div class="campo">
+                    <label for="github">GitHub</label>
+                    <input type="text" id="github" name="github" placeholder="github">
+                </div>
+
+                <div class="campo">
+                    <label for="link_url">Site / Portfólio</label>
+                    <input type="text" id="link_url" name="link_url" placeholder="https://site-pessoal.com">
+                </div>
             </div>
 
             <div class="form-section">
-                <h2>Experiencia</h2>
-                <input type="text" name="empresa" placeholder="Empresa"><br>
-                <input type="text" name="funcao" placeholder="funcao"><br>
-                <input type="date" name="data_inicio"><br>
-                <input type="date" name="data_fim"><br>
-                <input type="text" name="emprego_atual" placeholder="Ex: Sim, atualmente / Não"><br>
-                <textarea name="descricao" placeholder="Descreva suas atividades"></textarea><br>
+                <h2>Experiência</h2>
+
+                <div class="campo">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="empresa" placeholder="Empresa">
+                </div>
+
+                <div class="campo">
+                    <label for="funcao">Função</label>
+                    <input type="text" id="funcao" name="funcao" placeholder="funcao">
+                </div>
+
+                <div class="campo">
+                    <label for="data_inicio">Data de Início</label>
+                    <input type="date" id="data_inicio" name="data_inicio">
+                </div>
+
+                <div class="campo">
+                    <label for="data_fim">Data de Fim</label>
+                    <input type="date" id="data_fim" name="data_fim">
+                </div>
+
+                <div class="campo">
+                    <label for="emprego_atual">Emprego Atual</label>
+                    <input type="text" id="emprego_atual" name="emprego_atual" placeholder="Ex: Sim, atualmente / Não">
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição das Atividades</label>
+                    <textarea id="descricao" name="descricao" placeholder="Descreva suas atividades"></textarea>
+                </div>
             </div>
 
             <div class="form-section">
                 <h2>Formação</h2>
-                <input type="text" name="instituicao" placeholder="instituicao"><br>
-                <input type="text" name="curso" placeholder="curso"><br>
-                <input type="text" name="periodo" placeholder="periodo"><br>
-                <input type="text" name="nivel" placeholder="Nivel (Técnico, Tecnólogo, Bacharelado...)"><br>
-                <input type="text" name="status" placeholder="Status"><br>
+
+                <div class="campo">
+                    <label for="instituicao">Instituição</label>
+                    <input type="text" id="instituicao" name="instituicao" placeholder="instituicao">
+                </div>
+
+                <div class="campo">
+                    <label for="curso">Curso</label>
+                    <input type="text" id="curso" name="curso" placeholder="curso">
+                </div>
+
+                <div class="campo">
+                    <label for="periodo">Período</label>
+                    <input type="text" id="periodo" name="periodo" placeholder="periodo">
+                </div>
+
+                <div class="campo">
+                    <label for="nivel">Nível</label>
+                    <input type="text" id="nivel" name="nivel" placeholder="Nivel (Técnico, Tecnólogo, Bacharelado...)">
+                </div>
+
+                <div class="campo">
+                    <label for="status">Status</label>
+                    <input type="text" id="status" name="status" placeholder="Status">
+                </div>
             </div>
 
             <button type="submit" class="btnCriar">Criar Currículo</button>
